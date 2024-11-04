@@ -26,8 +26,7 @@ namespace CleanupKuduCIFunctionalTestResources
             // Get all web apps in the resource group
             var webApps = resourceGroup.GetWebSites().GetAll().ToList();
 
-            // Process each web app in parallel to remove them
-           
+            // Process each web app in parallel to remove them           
             await ProcessInBatchesAsync(webApps, RemoveWebAppWithRetryAsync, 4);
 
 
